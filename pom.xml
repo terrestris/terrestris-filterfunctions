@@ -5,7 +5,7 @@
 
     <groupId>de.terrestris</groupId>
     <artifactId>terrestris-filterfunctions</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>terrestris GeoTools filter functions</name>
@@ -14,7 +14,7 @@
         <url>https://github.com/terrestris/terrestris-filterfunctions</url>
         <connection>scm:git:git@github.com:terrestris/terrestris-filterfunctions.git</connection>
         <developerConnection>scm:git:git@github.com:terrestris/terrestris-filterfunctions.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>terrestris-filterfunctions-0.0.1</tag>
     </scm>
 
     <repositories>
