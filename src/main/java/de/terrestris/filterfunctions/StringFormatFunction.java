@@ -12,46 +12,46 @@ import static org.geotools.filter.capability.FunctionNameImpl.parameter;
  */
 public class StringFormatFunction extends FunctionExpressionImpl {
 
-    private static final FunctionName NAME =
-        new FunctionNameImpl(
-            "stringFormat",
-            String.class,
-            parameter("format", String.class),
-            parameter("class", String.class),
-            parameter("double", Object.class));
+  private static final FunctionName NAME =
+    new FunctionNameImpl(
+      "stringFormat",
+      String.class,
+      parameter("format", String.class),
+      parameter("class", String.class),
+      parameter("double", Object.class));
 
-    public StringFormatFunction() {
-        super(NAME);
+  public StringFormatFunction() {
+    super(NAME);
+  }
+
+  @Override
+  public String evaluate(Object feature) {
+    String format;
+    String className;
+    Object target;
+
+    try {
+      format = getExpression(0).evaluate(feature, String.class);
+    } catch (Exception e) {
+      throw new IllegalArgumentException(
+        "Filter Function problem for function stringFormat argument #0 - expected type String");
     }
 
-    @Override
-    public String evaluate(Object feature) {
-        String format;
-        String className;
-        Object target;
-
-        try {
-            format = getExpression(0).evaluate(feature, String.class);
-        } catch (Exception e) {
-            throw new IllegalArgumentException(
-                "Filter Function problem for function stringFormat argument #0 - expected type String");
-        }
-
-        try {
-            className = getExpression(1).evaluate(feature, String.class);
-        } catch (Exception e) {
-            throw new IllegalArgumentException(
-                "Filter Function problem for function stringFormat argument #1 - expected type String");
-        }
-
-        try {
-            target = getExpression(2).evaluate(feature, Class.forName(className));
-        } catch (Exception e) {
-            throw new IllegalArgumentException(
-                "Filter Function problem for function stringFormat argument #2 - expected type " + className);
-        }
-
-        return String.format(format, target);
+    try {
+      className = getExpression(1).evaluate(feature, String.class);
+    } catch (Exception e) {
+      throw new IllegalArgumentException(
+        "Filter Function problem for function stringFormat argument #1 - expected type String");
     }
+
+    try {
+      target = getExpression(2).evaluate(feature, Class.forName(className));
+    } catch (Exception e) {
+      throw new IllegalArgumentException(
+        "Filter Function problem for function stringFormat argument #2 - expected type " + className);
+    }
+
+    return String.format(format, target);
+  }
 
 }
