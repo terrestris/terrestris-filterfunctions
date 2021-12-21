@@ -108,7 +108,7 @@
         <plugin>
           <groupId>org.sonarsource.scanner.maven</groupId>
           <artifactId>sonar-maven-plugin</artifactId>
-          <version>3.9.0.2155</version>
+          <version>3.9.1.2184</version>
         </plugin>
         <plugin>
           <artifactId>maven-dependency-plugin</artifactId>
@@ -234,7 +234,7 @@
       <dependency>
         <groupId>org.geotools</groupId>
         <artifactId>gt-main</artifactId>
-        <version>26.0</version>
+        <version>26.1.06</version>
       </dependency>
       <dependency>
         <groupId>si.uom</groupId>
