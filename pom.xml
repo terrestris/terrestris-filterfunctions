@@ -234,7 +234,7 @@
       <dependency>
         <groupId>org.geotools</groupId>
         <artifactId>gt-main</artifactId>
-        <version>27.2</version>
+        <version>28.0</version>
       </dependency>
       <dependency>
         <groupId>si.uom</groupId>
